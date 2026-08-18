@@ -2,6 +2,11 @@
 # Exit immediately if a command exits with a non-zero status
 set -o errexit
 
+# If running from repository root, navigate into config directory
+if [ -d "config" ]; then
+    cd config
+fi
+
 echo "Installing Dependencies..."
 pip install -r requirements.txt
 
