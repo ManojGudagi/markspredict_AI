@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register - markspredict</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        navy: {
+                            800: '#062b57',
+                            900: '#043873',
+                            950: '#02234a',
+                        },
+                        brand: {
+                            blue: '#4F9CF9',
+                            yellow: '#FFE492',
+                            ice: '#F7F9FC',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-navy-900 text-white font-sans antialiased min-h-screen flex flex-col justify-between selection:bg-brand-blue selection:text-white">
+
+    <!-- Top Navigation Bar -->
+    <header class="bg-navy-900 border-b border-navy-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 h-20 flex items-center justify-between">
+            
+            <!-- Logo -->
+            <a href="/" class="flex items-center space-x-3 group">
+                <div class="w-9 h-9 bg-brand-blue rounded-lg flex items-center justify-center text-navy-900 font-extrabold text-xl shadow-md">
+                    <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+                    </svg>
+                </div>
+                <span class="text-2xl font-extrabold tracking-tight text-white">markspredict</span>
+            </a>
+
+            <!-- Action Link -->
+            <div class="flex items-center space-x-3">
+                <span class="text-slate-300 text-sm hidden sm:inline">Already registered?</span>
+                <a href="/login/" class="px-4 py-2 rounded-lg bg-brand-yellow hover:bg-amber-300 text-navy-900 font-bold text-xs sm:text-sm transition shadow">
+                    Login
+                </a>
+            </div>
+
+        </div>
+    </header>
+
+    <!-- Main Content Container -->
+    <main class="flex-1 flex items-center justify-center p-4 sm:p-6 lg:p-8">
+        
+        <div class="bg-white text-slate-800 rounded-2xl shadow-2xl p-6 sm:p-10 w-full max-w-md border border-slate-100 relative">
+            
+            <!-- Card Header -->
+            <div class="text-center mb-8">
+                <h1 class="text-2xl sm:text-3xl font-extrabold text-navy-900 tracking-tight">Create Account</h1>
+                <p class="text-slate-500 text-sm mt-2">Sign up to predict your academic marks with ML</p>
+            </div>
+
+            <!-- Alert Message Blocks -->
+            <div id="errorMessage" class="hidden mb-6 p-4 rounded-xl text-sm font-semibold bg-red-50 text-red-600 border border-red-200 transition"></div>
+            <div id="successMessage" class="hidden mb-6 p-4 rounded-xl text-sm font-semibold bg-emerald-50 text-emerald-700 border border-emerald-200 transition"></div>
+
+            <!-- Register Form -->
+            <form id="registerForm" class="space-y-4">
+                <div>
+                    <label class="block text-xs font-bold text-navy-900 uppercase tracking-wider mb-1.5">Username</label>
+                    <input
+                        type="text"
+                        id="username"
+                        placeholder="Choose a unique username"
+                        required
+                        class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-lg focus:bg-white focus:outline-none focus:ring-2 focus:ring-brand-blue focus:border-transparent text-sm font-medium text-slate-800 transition"
+                    >
+                </div>
+
+                <div>
+                    <label class="block text-xs font-bold text-navy-900 uppercase tracking-wider mb-1.5">Email Address</label>
+                    <input
+                        type="email"
+                        id="email"
+                        placeholder="student@example.com"
+                        required
+                        class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-lg focus:bg-white focus:outline-none focus:ring-2 focus:ring-brand-blue focus:border-transparent text-sm font-medium text-slate-800 transition"
+                    >
+                </div>
+
+                <div>
+                    <label class="block text-xs font-bold text-navy-900 uppercase tracking-wider mb-1.5">Password</label>
+                    <input
+                        type="password"
+                        id="password"
+                        placeholder="At least 8 characters"
+                        required
+                        minlength="8"
+                        class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-lg focus:bg-white focus:outline-none focus:ring-2 focus:ring-brand-blue focus:border-transparent text-sm font-medium text-slate-800 transition"
+                    >
+                </div>
+
+                <button
+                    type="submit"
+                    class="w-full py-3.5 px-4 bg-brand-blue hover:bg-blue-600 text-white font-bold rounded-lg shadow-lg shadow-blue-500/25 transition transform active:scale-[0.98] cursor-pointer text-sm mt-2"
+                >
+                    Create Free Account
+                </button>
+            </form>
+
+            <!-- Card Footer -->
+            <div class="mt-8 pt-6 border-t border-slate-100 text-center text-xs sm:text-sm text-slate-600">
+                Already have an account? 
+                <a href="/login/" class="font-bold text-brand-blue hover:underline ml-1">Sign In here</a>
+            </div>
+
+        </div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-navy-950 text-slate-400 py-6 border-t border-navy-800 text-xs">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 flex flex-col sm:flex-row items-center justify-between gap-4">
+            <p>&copy; 2026 markspredict. All rights reserved.</p>
+            <div class="flex items-center space-x-6">
+                <a href="/" class="hover:text-white transition">Home</a>
+                <a href="/login/" class="hover:text-white transition">Login</a>
+                <a href="/swagger/" class="hover:text-white transition">API Docs</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document
+            .getElementById("registerForm")
+            .addEventListener("submit", async function(event) {
+
+                event.preventDefault();
+
+                const errElem = document.getElementById("errorMessage");
+                const succElem = document.getElementById("successMessage");
+                errElem.classList.add("hidden");
+                succElem.classList.add("hidden");
+
+                const username = document.getElementById("username").value;
+                const email = document.getElementById("email").value;
+                const password = document.getElementById("password").value;
+
+                try {
+                    const response = await fetch(
+                        "/api/register/",
+                        {
+                            method: "POST",
+                            headers: {
+                                "Content-Type": "application/json"
+                            },
+                            body: JSON.stringify({
+                                username: username,
+                                email: email,
+                                password: password
+                            })
+                        }
+                    );
+
+                    const data = await response.json();
+
+                    if (response.ok) {
+                        succElem.innerText = "Account created successfully! Redirecting to login...";
+                        succElem.classList.remove("hidden");
+                        setTimeout(() => {
+                            window.location.href = "/login/";
+                        }, 1200);
+                    } else {
+                        let errorMsg = "Registration failed.";
+                        if (typeof data === "object") {
+                            errorMsg = Object.values(data).flat().join(" ");
+                        }
+                        errElem.innerText = errorMsg;
+                        errElem.classList.remove("hidden");
+                    }
+                } catch (error) {
+                    console.error("Register error:", error);
+                    errElem.innerText = "Server connection error. Please try again.";
+                    errElem.classList.remove("hidden");
+                }
+            });
+    </script>
+
+</body>
+</html>
